@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container">
+  <div 
+    class="video-card" 
+    *ngFor="let video of videos"
+    [routerLink]="['/video', video.id]" 
+  >
+    <img [src]="video.thumbnail" alt="Thumbnail" />
+    <div class="video-info">
+      <h3>{{ video.title }}</h3>
+      <h6>{{ video.description }}</h6>
+      <div class="video-actions">
+        <fa-icon [icon]="faHeart"></fa-icon>
+        <fa-icon [icon]="faBell"></fa-icon>
+      </div>
+      <div class="video-info-row">
+        <p>{{ video.views }} Views</p>
+        <p>{{ video.uploadedAt | date: 'dd/MM/yyyy' }}</p>
+      </div>
+    </div>
+  </div>
+</div>

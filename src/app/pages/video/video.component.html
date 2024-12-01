@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container">
+  <div class="video-detail-container" *ngIf="video">
+    <!-- Vídeo -->
+<iframe 
+  [src]="video[0].url | safeUrl" 
+  width="100%" 
+  height="500px" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+
+    <h1>{{ video[0].title }}</h1>
+    <h4>{{ video[0].description }}</h4>
+    <p>Views: {{ video[0].views }}</p>
+    <p>Uploaded on: {{ video[0].uploadedAt | date: 'dd/MM/yyyy' }}</p>
+  </div>
+  <div *ngIf="!video">
+    <p>Carregando informações do vídeo...</p>
+  </div>
+</div>

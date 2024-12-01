@@ -1,0 +1,17 @@
+.profile, .avatar {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  gap: 8px;
+}
+
+.profile {
+  gap: 12px;
+}
+
+.avatar img {
+  width: 42px;
+  border-radius: 30px;
+}
